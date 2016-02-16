@@ -1,4 +1,4 @@
-# swat
+# CPS
 
 This is cyber physical system (cps) project repository. 
 
