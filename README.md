@@ -1,6 +1,6 @@
 # swat
 
-This is the SWaT testbed project repository. 
+This is cyber physical system (cps) project repository. 
 
 * ANALYSIS OF ATTACKS:
 
