@@ -7,7 +7,6 @@ This is cyber physical system (cps) project repository.
   * Physical attacks
 
   * Cyber attacks 
-  * 
 * Attack detection
 * Attack mitigation
   
