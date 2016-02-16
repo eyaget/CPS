@@ -2,11 +2,14 @@
 
 This is cyber physical system (cps) project repository. 
 
-* ANALYSIS OF ATTACKS:
+* Analysis of attacks
 
   * Physical attacks
 
   * Cyber attacks 
+  * 
+ * Attack detection
+ * Attack mitigation
   
 
   
