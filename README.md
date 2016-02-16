@@ -2,11 +2,11 @@
 
 This is the SWaT testbed project repository. 
 
-ANALYSIS OF ATTACKS:
+* ANALYSIS OF ATTACKS:
 
-Physical attacks
+* Physical attacks
 
-Cyber attacks 
+* Cyber attacks 
   
 
   
