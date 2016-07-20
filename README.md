@@ -1,6 +1,6 @@
 # CPS
 
-This is cyber physical system (cps) project repository. 
+This is my cyber physical system (cps) project repository. 
 
 * Analysis of attacks
 
