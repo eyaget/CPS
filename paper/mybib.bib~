@@ -1,0 +1,18 @@
+@ARTICLE{conf:swat, 
+ author = "XX", 
+ title= "Reference 1",
+ year = "2015"
+}
+
+@ARTICLE\bibitem{article:hmi, 
+author = "YY", 
+title = "Reference 2",
+year = 2014
+}
+
+
+@ARTICLE\bibitem{paper:ptp2,
+author = "Robert F.H. Fischer, Clemens Stierstorfer, Johannes B. Huber", 
+title = "Point-to-Point Transmission over MIMO Channels with Intersymbol Interference: Comparison of Single- and Multicarrier Modulation",
+year = ""
+}

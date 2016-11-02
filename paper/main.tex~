@@ -1,0 +1,240 @@
+%\documentclass[12pt,journal,compsoc]{IEEEtran}
+%\documentclass[twocolumn]{article}
+%{IEEEtran}
+%\usepackage[total={6.0in,8.0in},top=0.8in,
+ % left=1.3in, includefoot]{geometry}
+\documentclass{acm_proc_article-sp}
+%\documentclass{sig-alternate-05-2015}
+%\usepackage{epsfig,setspace,subfig,url,amsmath, booktabs}
+%\usepackage{graphicx}
+%\usepackage{caption}
+\usepackage{float}
+\usepackage{hyperref} 
+
+%new packages
+\usepackage{verbatim}
+
+%For author
+%\newcommand*{\affaddr}[1]{#1} % No op here. Customize it for different styles.
+\newcommand*{\affmark}[1][*]{\textsuperscript{#1}}
+%\newcommand*{\email}[1]{\texttt{#1}}
+
+
+\newcommand{\nextitem}{\par\hspace*{\labelsep}\textbullet\hspace*{\labelsep}}
+%\renewcommand{\familydefault}{\sfdefault}
+
+\begin{document}
+%\pdfpageheight 12in 
+%\pdfpagewidth 14in
+\title{Empirically Measuring Memory Safety Overheads for CPS}
+\subtitle{[Draft]}
+\begin{comment}
+\numberofauthors{4}
+\author{
+% 1st. author
+\alignauthor
+Mart\'{i}n Ochoa\\
+       \affaddr{Singapore University of Technology and Design}\\
+       %\affaddr{University of Padua}\\
+       \email{martin\_ochoa@sutd.edu.sg}
+% 2nd. author
+\alignauthor
+Eyasu Getahun Chekole\\
+       \affaddr{Singapore University of Technology and Design}\\
+       \affaddr{Advanced Digital Sciences Center, Illinois at Singapore}\\
+       \email{eyasu\_chekole@mymail.sutd.edu.sg}\\
+\and
+% 3rd. author
+\alignauthor
+David K. Y. Yau\\
+       \affaddr{Singapore University of Technology and Design}\\
+       \affaddr{Advanced Digital Sciences Center, Illinois at Singapore}\\
+       \email{david\_yau@sutd.edu.sg}
+% 4th. author
+\alignauthor
+John Henry Castellanos Alvarado\\
+       \affaddr{Singapore University of Technology and Design}\\
+       %\affaddr{Via Garibaldi 63 - 25087, Salo (BS), IT}\\
+       \email{john\_alvarado@mymail.sutd.edu.sg}
+}
+\end{comment}
+\begin{comment}
+\author{%
+Mart\'{i}n Ochoa\affmark[1], Eyasu Getahun Chekole\affmark[1,2], John Henry Alvarado\affmark[1], David K. Y. Yau\affmark[1,2]\\\\
+\affaddr{\affmark[1]Singapore University of Technology and Design}\\
+\email{\{martin\_ochoa, david\_yau\}@sutd.edu.sg}\\
+\email{\{eyasu\_chekole, john\_alvarado\}@mymail.sutd.edu.sg}\\\\
+\affaddr{\affmark[2]Advanced Digital Sciences Center, Illinois at Singapore}\\
+\email{\{eyasu.c, david.yau\}@adsc.com.sg}
+%\affaddr{\LaTeX\ University}%
+}
+\end{comment}
+
+\begin{comment}
+\author[1]{Alice Smith}
+\author[2]{Bob Jones}
+\affil[1]{Department of Mathematics, University X}
+\affil[2]{Department of Biology, University Y}
+\end{comment}
+
+%\date{\vspace{-5ex}}
+\maketitle
+
+\begin{abstract}
+The abstract goes here ...
+\input{abstract}
+\end{abstract}
+
+%\noindent \textbf{\Large{Categories and Subject Descriptors}}\\
+%\noindent D.4.6 \textbf{[Security and Privacy Protection]}: Access controls\\\\
+%\noindent \textbf{\Large{General Terms}}\\
+%\noindent Security\\\\
+%\noindent \textbf{\Large{Keywords}} \\
+%\noindent Data privacy, Data security, Access control models, PoGAC
+
+%\category{D.4.6}{Security and Privacy Protection}{Access controls}
+%\terms{Security}
+%\keywords{Data privacy, Data security, Access control models, PoGAC}
+
+\section{Introduction}\label{sec:introduction}
+Introduction of the paper will include the following points:
+\begin{enumerate}
+\item \textbf{Problem description}
+\begin{itemize}
+\item Clear description of memory safety vulnerabilities in CPS (specifically in context of SWaT) - \emph{preliminary problem - P0}.
+\item Explaining (class of) attacks that target those vulnerabilities (firmware-based attacks, in general) - \emph{initial problem - P1}.
+\item High level explanation of memory safety solutions: specifically the MS tool we are using (its features, reason of choosing it, etc). 
+\item Elaborating memory safety overheads and how it affects a CPS plant, e.g., in SWaT - \emph{main problem and focus of the paper - P2}.
+\end{itemize}
+\item \textbf{Our proposed solution} 
+\begin{itemize}
+\item Introduce a memory safety tool in CPS environment, which is
+\begin{itemize}
+\item Effective in security (in detecting memory errors) - hence solving \emph{P1}.
+\item Efficient in performance (tolerable in the system) - hence solving \emph{P2}.
+\end{itemize}
+\end{itemize}
+\item \textbf{Contributions}: contributions (novelty claims) of our work. 
+\begin{itemize}
+\item Adopting memory safety solutions in the CPS environment - \emph{referring the evidence on Section xx}.
+\item Benchmarking and empirically measuring its runtime overhead (MSO) in CPS environment - \emph{referring the evidence on Section xx}.
+\item Quantifying and ensuring its tolerability (before it creates any disruption to the system) - \emph{referring the evidence on Section xx}.
+\end{itemize}
+
+\item \textbf{Structure of the paper}: explaining how our paper is organized. 
+\begin{itemize}
+\item Section 2: xx
+\item Section 3: xx
+\item Section 4: xx
+\item Etc.
+\end{itemize}
+\end{enumerate}
+
+\section{Background}\label{background}
+\hspace{1cm} [Optional section] \footnote{Could be merged with Section \ref{systemmodel}}
+\begin{itemize}
+\item Characteristics of a CPS environment
+\begin{itemize}
+\item Ever lasting process (could result buffer overflows for unbounded buffers)
+\item Severe resource constraints, e.g., in PLCs: limited memory and CPU speed
+\item Hard real-time constraints
+\end{itemize}
+\item Overview of SWaT (details will be included in Section \ref{systemmodel})
+\begin{itemize}
+\item Overview
+\item Architecture
+\item etc
+\end{itemize}
+\item Address sanitizer
+\begin{itemize}
+\item How it works - a compile-time instrumentation tool.
+\item Memory errors coverage
+\item Performance
+\item Reason to choose it
+\end{itemize}
+\item OpenPLC
+\item ScadaBR
+\end{itemize}
+
+\section{System model: SWaT}\label{systemmodel}
+\begin{enumerate}
+\item \textbf{General architecture of the plant}
+\begin{itemize}
+\item Internal architecture of the system 
+\begin{itemize}
+\item Hardware architecture of the PLC, e.g., processor, registers, memory, etc.
+\item The PLC scan cycle 
+\end{itemize}
+\item Interacting components
+\begin{itemize}
+\item Sensors, actuators
+\item Other PLCs
+\item SCADA systems
+\item Communication topology
+\item Interaction constraints, e.g., frequency, accessing shared resources (e.g., mutual exclusion and the implication of locking on performance), etc.
+\end{itemize}
+\end{itemize}
+\item \textbf{Security concerns of the plant}: 
+\begin{itemize}
+\item Focusing on memory safety vulnerabilities.
+\item Highlighting attack vectors (and exploits) targeting those vulnerabilities. 
+\end{itemize}
+\item \textbf{Performance constraints}
+\begin{itemize}
+\item Real-time constraints (hard-deadline) of the system
+\item Elaborating how the runtime overhead, i.e, MSO, can affect the plant (e.g., violating the real-time constraint). 
+\end{itemize}
+\end{enumerate}
+
+\section{Empirically measuring memory safety overheads}\label{sec:measuremso}
+\begin{enumerate}
+\item Benchmark design
+\item Measurement details, e.g., implementation.
+%\item Main factors/variables 
+\item Measure MSO of each individual PLC operations: scan inputs, program execution, update Outputs, others (locking/unlocking threads). 
+\item Measure overall MSO
+\item Show if there is exceptional deviation in performance 
+\begin{itemize}
+\item MSO is an average value, but a single exceptional scan time could disrupt the system. 
+\item Hence, needs to graphically show variance of each scan time
+\end{itemize}
+\end{enumerate}
+
+\section{Quantify tolerability}\label{sec:tolerability}
+\begin{itemize}
+\item Identifying and characterizing performance constraints of the system
+\begin{itemize}
+\item Internal constraints, e.g., cycle time.
+\item External constraints, e.g., frequency of communications with external components.
+\end{itemize}
+\item Quantifying a tolerable MSO range.
+\end{itemize}
+
+\section{Evaluation}
+\begin{itemize}
+\item Security evaluation
+\begin{itemize}
+\item Coverage
+\item Effectiveness
+\end{itemize}
+\item Performance evaluation (referring Section \ref{sec:measuremso} and \ref{sec:tolerability})
+\begin{itemize}
+\item Analyzing MSO and its tolerability 
+\end{itemize}
+\end{itemize}
+\section{Related work}
+\begin{itemize}
+\item Security and memory safety related works in CPS or embedded systems. 
+\item Performance overhead related works in CPS environment. 
+\end{itemize}
+\section{Conclusion and future works}
+\begin{itemize}
+\item Conclusion
+\item Future works
+\end{itemize}
+\bibliographystyle{abbrv}
+\bibliography{mybib}
+
+%Show complete list of references.
+\nocite{*}
+\end{document}

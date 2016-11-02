@@ -1,0 +1,57 @@
+\begin{thebibliography}{10}
+
+\bibitem{paper:xmlframework1}
+Bo Luo, Dongwon Lee, Wang-Chien Lee, and Peng Liu. ``A Flexible Framework for Architecting XML Access Control Enforcement Mechanism", 2004. 
+
+\bibitem{paper:xmlbasedaccesscontrollanguages}
+ C.A. Ardagna E. Damiani S. De Capitani di Vimercati P. Samarati,``XML-based Access Control Languages", 2004. 
+
+\bibitem{oasis:xacml}
+OASIS standard. eXtensible Access Control Markup Language (XACML) Version 3.0. White paper, available at http://docs.oasis-open.org/xacml/3.0/xacml-3.0-core-spec-os-en.pdf, 2013. 
+
+\bibitem{oasis:saml}
+OASIS standard. Security Assertion Markup Language (SAML) V2.0 Technical Overview. White paper, available at https://www.oasis-open.org/ committees/download.php/27819/sstc-saml-tech-overview-2.0-cd-02.pdf, 2008.
+
+\bibitem{paper:xacl}
+Jan Rihak,``Access Control Markup Languages for XML Documents", 2004.
+
+\bibitem{spring:springsecurity}
+Spring security reference. White paper, available at http://docs.spring.io/spring-security/site/docs/4.0.0.M1/reference/htmlsingle/, 2014. 
+
+%\bibitem{zend:zendframework}
+%Zend framework overview. White paper, available at http://framework.zend.com/manual/2.3/en/ref/overview.html, 2014. 
+
+\bibitem{spring:spring}
+Spring framework reference. white paper, available at http://projects.spring.io/spring-framework/, 2014.   
+
+\bibitem{spel:spel}
+Spring Expression Language (SpEL). White paper, available at http://docs.spring.io/spring/docs/3.2.x/spring-framework-reference/html expressions.html, 2013.
+
+\bibitem{paper:abac}
+Alessandro Armando, Roberto Carbone, Eyasu Getahun Chekole, Silvio Ranise, ``Attribute Based Access Control for APIs in Spring Security", In   SACMAT2014: The 19th ACM Symposium on Access Control Models and Technologies, ACM press, 2014.
+
+\bibitem{paper:mac}
+Hakan Lindqvist, ``Mandatory Access control", 2006.
+
+\bibitem{wiki:dac}
+Wikipedia, ``Discretionary Access control".
+
+\bibitem{paper:rbac}
+Ravi S.S, Edward J.C, Hal L.F, Charles E.Y, ``Role-Based Access Controls", 1996.
+
+\bibitem{paper:abacfordissys}
+David J. B. Cheperda, ``Attribute-Based Access Control for Distributed Systems", 1996.
+
+\bibitem{paper:pbac}
+Phil H., Rich L., Hal L., Prateek M., ``Policy-based Access Control in Practice", 2008.
+
+\bibitem{paper:radac}
+Robert W. McGraw., ``Risk-Adaptable Access Control (RAdAC)", 2009.
+
+\bibitem{paper:cloudcomputing}
+Kangchan Lee, ``Security Threats in Cloud Computing Environments", International Jornal of Security and Its Applications, Vol. 6, No. 4, October, 2012.
+
+\bibitem{pci:pcidss}
+PCI Security Standard, ``PCI Data Security Standard (PCI DSS)". White paper, available at https://www.pcisecuritystandards.org/pdfs/PCI\_DSS\_v2\_Cloud\\ \_Guidelines.pdf, 2013.
+
+\end{thebibliography}
